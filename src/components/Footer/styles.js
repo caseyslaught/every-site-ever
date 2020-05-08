@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StyledFooterWrapper = styled.div`
   background: white;
-  min-height: 200px;
+  min-height: 250px;
   width: 100%;
+  margin-top: ${(props) => (props.isDesktop ? "20px" : "0px")};
 `;
 
 export const StyledFooter = styled.div`

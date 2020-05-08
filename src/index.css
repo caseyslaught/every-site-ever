@@ -8,7 +8,7 @@ html,
   font-family: "Lato", system-ui, sans-serif;
   font-style: normal;
   font-weight: normal;
-  background-color: #fafafa;
+  background-color: #f3f6f9;
 }
 
 .header-text {
@@ -26,4 +26,5 @@ html,
 .info-text {
   font-size: 1.2em;
   font-weight: normal;
+  line-height: 1.2em;
 }

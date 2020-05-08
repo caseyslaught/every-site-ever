@@ -5,7 +5,6 @@ export const StyledPartnersSectionWrapper = styled.div`
   min-height: 200px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: white;
 `;
 
 export const StyledPartnersSection = styled.div`
@@ -25,6 +24,17 @@ export const StyledPartnersSection = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
+  }
+
+  .image-wrapper {
+    margin: 20px;
+    height: ${(props) => (props.isDesktop ? "100px" : "80px")};
+  }
+
+  .image-wrapper img {
+    width: auto;
+    height: 100%;
+    filter: brightness(120%);
   }
 
   .bottom-text {

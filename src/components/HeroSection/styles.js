@@ -7,7 +7,7 @@ export const StyledHeroSectionWrapper = styled.div`
 `;
 
 export const StyledHeroSection = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 
@@ -19,26 +19,32 @@ export const StyledHeroSection = styled.div`
     align-items: stretch;
   }
 
-  .hero-wrapper .image-wrapper {
+  .image-wrapper {
     width: ${(props) => (props.isDesktop ? "50%" : "100%")};
-    padding: 20px;
+    padding: 10px;
     text-align: center;
   }
 
-  .hero-wrapper .image-wrapper img {
-    width: ${(props) => (props.isDesktop ? "80%" : "50%")};
+  .image-wrapper img {
+    width: ${(props) => (props.isDesktop ? "70%" : "60%")};
     max-width: 450px;
     height: auto;
   }
 
-  .hero-wrapper .text-wrapper {
+  .text-wrapper {
     width: ${(props) => (props.isDesktop ? "50%" : "100%")};
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
   }
 
-  .hero-wrapper .text-wrapper > div {
+  .text-wrapper .header-text {
+    font-size: ${(props) => (props.isDesktop ? "3em" : "2em")};
+    line-height: normal;
+    font-weight: lighter;
+  }
+
+  .text-wrapper > div {
     flex: 1;
     margin-bottom: 10px;
     padding-top: 10px;

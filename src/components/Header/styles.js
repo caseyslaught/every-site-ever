@@ -5,7 +5,7 @@ export const StyledHeaderWrapper = styled.div`
   position: fixed;
   top: 0px;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 
   box-shadow: ${(props) =>
     props.isSmall ? "0 8px 15px -7px rgba(0, 0, 0, 0.2)" : "none"};
@@ -63,5 +63,16 @@ export const StyledHeader = styled.div`
   .dropdown .icon {
     font-size: 1.5em;
     color: #757575;
+  }
+
+  .dropdown-menu {
+    padding: 10px 5px !important;
+  }
+
+  .dropdown-item {
+    padding: 3px;
+    color: #555555 !important;
+    font-size: 1em !important;
+    text-align: right !important;
   }
 `;

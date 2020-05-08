@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const StyledSectionWrapper = styled.div`
   width: 100%;
   padding-top: 20px;
-  background: ${(props) => (props.isImageLeft ? "#ffffff" : "#f5f5f5")};
 `;
 
 export const StyledSection = styled.div`
-  max-width: 1200px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 
@@ -23,38 +22,52 @@ export const StyledSection = styled.div`
       }
     }};
 
-    justify-content: center;
-    align-items: stretch;
+    align-items: center;
   }
 
-  .section-wrapper .image-wrapper {
-    width: ${(props) => (props.isDesktop ? "40%" : "100%")};
-    padding: 20px;
+  .image-wrapper {
     text-align: center;
+    display: flex;
+
+    margin-left: ${(props) =>
+      !props.isImageLeft && props.isDesktop ? "-130px" : "0px"};
+    margin-right: ${(props) =>
+      props.isImageLeft && props.isDesktop ? "-130px" : "0px"};
+    margin-bottom: ${(props) => (props.isDesktop ? "0px" : "-60px")};
+    z-index: 1;
   }
-  .section-wrapper .image-wrapper img {
-    width: ${(props) => (props.isDesktop ? "80%" : "50%")};
-    max-width: 300px;
+  .image-wrapper img {
+    width: 300px;
     height: auto;
   }
 
-  .section-wrapper .text-wrapper {
-    width: ${(props) => (props.isDesktop ? "60%" : "100%")};
-    padding: 20px;
+  .text-wrapper {
+    height: 100%;
+
+    padding: ${(props) => {
+      if (props.isDesktop) {
+        return props.isImageLeft
+          ? "60px 20px 60px 160px"
+          : "60px 140px 60px 40px";
+      } else {
+        return "80px 40px 40px 40px";
+      }
+    }};
+
     display: flex;
     flex-direction: column;
+
+    border-radius: 8px;
+    border-color: #fff;
+
+    background: white;
+    border-radius: ${(props) => (props.isDesktop ? "15px" : "0px")};
   }
 
-  .section-wrapper .text-wrapper > div {
+  .text-wrapper > div {
     margin-bottom: 20px;
     padding-top: 10px;
     vertical-align: middle;
-    text-align: ${(props) => {
-      if (props.isDesktop) {
-        return props.isImageLeft ? "left" : "right";
-      } else {
-        return "center";
-      }
-    }};
+    text-align: ${(props) => (props.isDesktop ? "left" : "center")};
   }
 `;

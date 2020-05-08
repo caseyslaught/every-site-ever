@@ -26,11 +26,12 @@ const MobileNavbar = () => {
       direction="left"
       className="icon dropdown"
     >
-      <Dropdown.Menu>
-        <Dropdown.Item text="About us" />
-        <Dropdown.Item text="Features" />
-        <Dropdown.Item text="Pricing" />
-        <Dropdown.Item text="Contact us" />
+      <Dropdown.Menu className="dropdown-menu">
+        <Dropdown.Item className="dropdown-item" text="About us" />
+        <Dropdown.Divider />
+        <Dropdown.Item className="dropdown-item" text="Features" />
+        <Dropdown.Divider />
+        <Dropdown.Item className="dropdown-item" text="Contact us" />
       </Dropdown.Menu>
     </Dropdown>
   );

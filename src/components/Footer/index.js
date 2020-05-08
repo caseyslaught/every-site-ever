@@ -11,71 +11,71 @@ const Footer = () => {
     <StyledFooterWrapper isDesktop={isDesktop}>
       <StyledFooter isDesktop={isDesktop}>
         <div className="links-wrapper">
-          <div class="footer-group">
-            <div class="footer-title">Product</div>
-            <a href="/" class="footer-link">
+          <div className="footer-group">
+            <div className="footer-title">Product</div>
+            <a href="/" className="footer-link">
               Cool thing
             </a>
-            <a href="/" class="footer-link">
+            <a href="/" className="footer-link">
               Amazing stuff
             </a>
-            <a href="/" class="footer-link">
+            <a href="/" className="footer-link">
               Rad gadget
             </a>
           </div>
 
-          <div class="footer-group">
-            <div class="footer-title">Company</div>
-            <a href="/" class="footer-link">
+          <div className="footer-group">
+            <div className="footer-title">Company</div>
+            <a href="/" className="footer-link">
               About us
             </a>
-            <a href="/" class="footer-link">
+            <a href="/" className="footer-link">
               Careers
             </a>
-            <a href="/" class="footer-link">
+            <a href="/" className="footer-link">
               Pricing
             </a>
           </div>
 
-          <div class="footer-group">
-            <div class="footer-title">Support</div>
-            <a href="/" class="footer-link">
+          <div className="footer-group">
+            <div className="footer-title">Support</div>
+            <a href="/" className="footer-link">
               Contact us
             </a>
-            <a href="/" class="footer-link">
+            <a href="/" className="footer-link">
               FAQs
             </a>
-            <a href="/" class="footer-link">
+            <a href="/" className="footer-link">
               Request a demo
             </a>
           </div>
 
-          <div class="footer-group">
-            <div class="footer-title">Legal</div>
-            <a href="/" class="footer-link">
+          <div className="footer-group">
+            <div className="footer-title">Legal</div>
+            <a href="/" className="footer-link">
               Privacy Policy
             </a>
-            <a href="/" class="footer-link">
+            <a href="/" className="footer-link">
               Terms of Use
             </a>
           </div>
 
-          <div class="footer-group">
-            <div class="footer-title">Social</div>
-            <a href="/" class="footer-link">
-              <i aria-hidden="true" class="facebook f icon" />
+          <div className="footer-group">
+            <div className="footer-title">Social</div>
+            <a href="/" className="footer-link">
+              <i aria-hidden="true" className="facebook f icon" />
               Facebook
             </a>
-            <a href="/" class="footer-link">
-              <i aria-hidden="true" class="github icon" />
+            <a href="/" className="footer-link">
+              <i aria-hidden="true" className="github icon" />
               Github
             </a>
-            <a href="/" class="footer-link">
-              <i aria-hidden="true" class="instagram  icon" />
+            <a href="/" className="footer-link">
+              <i aria-hidden="true" className="instagram  icon" />
               Instagram
             </a>
-            <a href="/" class="footer-link">
-              <i aria-hidden="true" class="linkedin icon" />
+            <a href="/" className="footer-link">
+              <i aria-hidden="true" className="linkedin icon" />
               LinkedIn
             </a>
           </div>
