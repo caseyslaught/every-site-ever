@@ -5,6 +5,7 @@ export const StyledHeaderWrapper = styled.div`
   position: fixed;
   top: 0px;
   width: 100%;
+  z-index: 1;
 
   box-shadow: ${(props) =>
     props.isSmall ? "0 8px 15px -7px rgba(0, 0, 0, 0.2)" : "none"};

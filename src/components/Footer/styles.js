@@ -15,9 +15,6 @@ export const StyledFooter = styled.div`
 
   padding: ${(props) => (props.isDesktop ? "20px 40px 60px 40px" : "20px")};
 
-  display: flex;
-  flex-direction: column;
-
   .links-wrapper {
     display: flex;
     justify-content: center;
