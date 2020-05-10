@@ -12,7 +12,7 @@ export const StyledHeaderWrapper = styled.div`
     props.isSmall ? "0 8px 15px -7px rgba(0, 0, 0, 0.2)" : "none"};
 
   padding: ${(props) => (props.isDesktop ? "5px 80px" : "5px 20px")};
-  height: ${(props) => (props.isSmall ? "40px" : "64px")};
+  height: ${(props) => (props.isSmall ? "50px" : "64px")};
   border-bottom: ${(props) => (props.isSmall ? "1px solid #fafafa" : "none")};
 
   transition: all 250ms ease;
@@ -28,7 +28,7 @@ export const StyledHeader = styled.div`
   .logo {
     height: 100%;
     width: auto;
-    padding: 2px;
+    padding: 3px;
     float: left;
   }
 

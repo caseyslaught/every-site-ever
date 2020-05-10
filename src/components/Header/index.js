@@ -41,8 +41,6 @@ const Header = () => {
   const { isDesktop } = useWindowDimensions();
   const [isSmall, setIsSmall] = React.useState(false);
 
-  console.log(isDesktop);
-
   React.useEffect(() => {
     const onScroll = () => setIsSmall(window.pageYOffset > 100);
     window.addEventListener("scroll", onScroll);

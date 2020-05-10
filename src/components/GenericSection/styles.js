@@ -26,20 +26,19 @@ export const StyledSection = styled.div`
       !props.isImageLeft && props.isDesktop ? "-130px" : "0px"};
     margin-right: ${(props) =>
       props.isImageLeft && props.isDesktop ? "-130px" : "0px"};
-    margin-bottom: ${(props) => (props.isDesktop ? "0px" : "-60px")};
+    margin-bottom: ${(props) => (props.isDesktop ? "0px" : "-70px")};
     z-index: 1;
   }
   .image-wrapper img {
-    width: 300px;
+    width: 250px;
   }
 
   .text-wrapper {
     height: 100%;
-
     padding: ${(props) => {
       if (props.isDesktop) {
         return props.isImageLeft
-          ? "60px 20px 60px 160px"
+          ? "60px 40px 60px 160px"
           : "60px 140px 60px 40px";
       } else {
         return "80px 40px 40px 40px";

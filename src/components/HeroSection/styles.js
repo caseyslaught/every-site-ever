@@ -7,32 +7,30 @@ export const StyledHeroSectionWrapper = styled.div`
 `;
 
 export const StyledHeroSection = styled.div`
+  width: 100%;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 
-  .hero-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: ${(props) => (props.isDesktop ? "row" : "column")};
-    justify-content: center;
-    align-items: stretch;
-  }
+  display: flex;
+  flex-direction: ${(props) => (props.isDesktop ? "row" : "column")};
+  justify-content: center;
+  align-items: stretch;
 
   .image-wrapper {
-    width: ${(props) => (props.isDesktop ? "50%" : "100%")};
+    flex: 1;
     padding: 10px;
     text-align: center;
   }
 
   .image-wrapper img {
-    width: ${(props) => (props.isDesktop ? "70%" : "60%")};
-    max-width: 450px;
+    width: ${(props) => (props.isDesktop ? "70%" : "70%")};
+    max-width: 350px;
     height: auto;
   }
 
   .text-wrapper {
-    width: ${(props) => (props.isDesktop ? "50%" : "100%")};
+    flex: 1;
     padding: 10px;
     display: flex;
     flex-direction: column;
