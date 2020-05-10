@@ -26,8 +26,9 @@ export const StyledHeader = styled.div`
   margin-right: auto;
 
   .logo {
-    height: 80%;
+    height: 100%;
     width: auto;
+    padding: 2px;
     float: left;
   }
 

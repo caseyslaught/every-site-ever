@@ -22,17 +22,19 @@ const GenericSection = ({ isImageLeft }) => {
   const text = isImageLeft ? leftText : rightText;
 
   return (
-    <StyledSectionWrapper isImageLeft={isImageLeft}>
-      <StyledSection isDesktop={isDesktop} isImageLeft={isImageLeft}>
-        <div className="section-wrapper">
-          <div className="image-wrapper">
-            <img src={image} alt="section" />
-          </div>
+    <StyledSectionWrapper isImageLeft={isImageLeft} className="section-wrapper">
+      <StyledSection
+        isDesktop={isDesktop}
+        isImageLeft={isImageLeft}
+        className="section"
+      >
+        <div className="image-wrapper">
+          <img src={image} alt="section" />
+        </div>
 
-          <div className="text-wrapper">
-            <div className="subheader-text">{title}</div>
-            <div className="info-text">{text}</div>
-          </div>
+        <div className="text-wrapper">
+          <div className="subheader-text">{title}</div>
+          <div className="info-text">{text}</div>
         </div>
       </StyledSection>
     </StyledSectionWrapper>

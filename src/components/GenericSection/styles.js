@@ -6,29 +6,22 @@ export const StyledSectionWrapper = styled.div`
 `;
 
 export const StyledSection = styled.div`
+  width: 100%;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 
-  .section-wrapper {
-    width: 100%;
-    display: flex;
-
-    flex-direction: ${(props) => {
-      if (props.isDesktop) {
-        return props.isImageLeft ? "row" : "row-reverse";
-      } else {
-        return "column";
-      }
-    }};
-
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: ${(props) => {
+    if (props.isDesktop) {
+      return props.isImageLeft ? "row" : "row-reverse";
+    } else {
+      return "column";
+    }
+  }};
+  align-items: center;
 
   .image-wrapper {
-    text-align: center;
-    display: flex;
-
     margin-left: ${(props) =>
       !props.isImageLeft && props.isDesktop ? "-130px" : "0px"};
     margin-right: ${(props) =>
@@ -38,7 +31,6 @@ export const StyledSection = styled.div`
   }
   .image-wrapper img {
     width: 300px;
-    height: auto;
   }
 
   .text-wrapper {
