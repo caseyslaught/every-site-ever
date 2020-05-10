@@ -8,7 +8,7 @@ import Logo from "../../assets/images/logo.png";
 
 const DesktopNavbar = () => {
   return (
-    <div className="menu">
+    <div className="header-menu desktop-menu">
       <div className="menu-item">About us</div>
       <div className="menu-item">Features</div>
       <div className="menu-item">Pricing</div>
@@ -24,7 +24,7 @@ const MobileNavbar = () => {
       as="button"
       button
       direction="left"
-      className="icon dropdown"
+      className="icon dropdown header-menu"
     >
       <Dropdown.Menu className="dropdown-menu">
         <Dropdown.Item className="dropdown-item" text="About us" />

@@ -5,6 +5,7 @@ export const StyledHeaderWrapper = styled.div`
   position: fixed;
   top: 0px;
   width: 100%;
+  min-width: 336px;
   z-index: 2;
 
   box-shadow: ${(props) =>
@@ -24,17 +25,20 @@ export const StyledHeader = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  img {
-    height: ${(props) => (props.isDesktop ? "80%" : "70%")};
+  .logo {
+    height: 80%;
     width: auto;
+    float: left;
   }
 
-  .menu {
+  .header-menu {
+    height: 100%;
+    float: right;
+    margin: 2px 0px 0px 0px !important;
+    padding: 0px !important;
+  }
+
+  .desktop-menu {
     display: flex;
     flex-direction: row;
     align-items: center;

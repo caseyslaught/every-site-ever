@@ -13,7 +13,7 @@ import Five from "../../assets/images/partner_five.png";
 const PartnerTile = ({ imageUrl }) => {
   return (
     <div className="image-wrapper">
-      <img src={imageUrl} />
+      <img src={imageUrl} alt="partner" />
     </div>
   );
 };
