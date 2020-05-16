@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Button, Menu } from "antd";
+
 import { Dropdown } from "semantic-ui-react";
 
 import useWindowDimensions from "../../hooks/useWindowDimensions";
@@ -7,12 +9,25 @@ import { StyledHeader, StyledHeaderWrapper } from "./styles";
 import Logo from "../../assets/images/logo.png";
 
 const DesktopNavbar = () => {
+  const selectedTab = null;
   return (
-    <div className="header-menu desktop-menu">
-      <div className="menu-item">About us</div>
-      <div className="menu-item">Features</div>
-      <div className="menu-item">Pricing</div>
-      <button className="menu-item contact-button">Contact us</button>
+    <div className="desktop-menu-wrapper">
+      <Menu
+        className="desktop-menu"
+        mode="horizontal"
+        onClick={(e) => console.log("setSelectedTab(e.key)")}
+      >
+        <Menu.Item className="desktop-menu-item" key="about">
+          About us
+        </Menu.Item>
+        <Menu.Item className="desktop-menu-item" key="features">
+          Features
+        </Menu.Item>
+        <Menu.Item className="desktop-menu-item" key="company">
+          Company
+        </Menu.Item>
+      </Menu>
+      <Button shape="round">Contact us</Button>
     </div>
   );
 };

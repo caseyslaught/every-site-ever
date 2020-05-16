@@ -25,6 +25,9 @@ export const StyledHeader = styled.div`
   margin-left: auto;
   margin-right: auto;
 
+  display: flex;
+  justify-content: space-between;
+
   .logo {
     height: 100%;
     width: auto;
@@ -39,26 +42,22 @@ export const StyledHeader = styled.div`
     padding: 0px !important;
   }
 
-  .desktop-menu {
+  .desktop-menu-wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
   }
 
-  .menu-item {
-    margin-left: 20px;
-    color: #555555;
-    font-size: 1.2em;
+  .desktop-menu {
+    margin-bottom: 3px;
+    border-bottom: none;
+    margin-right: 20px;
   }
 
-  .contact-button {
-    border: solid #a333c8;
-    border-width: ${(props) => (props.isSmall ? "0px" : "1px")};
-    border-radius: 3px;
-    background-color: transparent;
-    color: #a333c8;
-    padding: 5px 8px;
-    font-size: 1.2em;
+  .desktop-menu-item {
+    height: 100%;
+    line-height: ${(props) => (props.isSmall ? "50px" : "64px")};
   }
 
   .dropdown {
