@@ -25,21 +25,14 @@ export const StyledHeader = styled.div`
   margin-left: auto;
   margin-right: auto;
 
+  padding: 5px;
+
   display: flex;
   justify-content: space-between;
 
   .logo {
     height: 100%;
     width: auto;
-    padding: 3px;
-    float: left;
-  }
-
-  .header-menu {
-    height: 100%;
-    float: right;
-    margin: 2px 0px 0px 0px !important;
-    padding: 0px !important;
   }
 
   .desktop-menu-wrapper {
@@ -60,23 +53,16 @@ export const StyledHeader = styled.div`
     line-height: ${(props) => (props.isSmall ? "50px" : "64px")};
   }
 
-  .dropdown {
-    background: inherit !important;
+  .mobile-menu-wrapper {
+    height: 100%;
   }
 
-  .dropdown .icon {
-    font-size: 1.5em;
-    color: #757575;
+  .mobile-menu-button {
+    height: 100%;
+    border: none;
   }
 
-  .dropdown-menu {
-    padding: 10px 5px !important;
-  }
-
-  .dropdown-item {
-    padding: 3px;
-    color: #555555 !important;
-    font-size: 1em !important;
-    text-align: right !important;
+  .mobile-menu-button span {
+    font-size: ${(props) => (props.isShrunk ? "1.4em" : "1.5em")};
   }
 `;

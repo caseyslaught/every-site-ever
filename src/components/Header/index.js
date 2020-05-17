@@ -1,21 +1,25 @@
 import React from "react";
 
-import { Button, Menu } from "antd";
-
-import { Dropdown } from "semantic-ui-react";
+import { Button, Drawer, Menu } from "antd";
+import {
+  InfoCircleOutlined,
+  HomeOutlined,
+  MenuOutlined,
+  SendOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { StyledHeader, StyledHeaderWrapper } from "./styles";
 import Logo from "../../assets/images/logo.png";
 
 const DesktopNavbar = () => {
-  const selectedTab = null;
   return (
     <div className="desktop-menu-wrapper">
       <Menu
         className="desktop-menu"
         mode="horizontal"
-        onClick={(e) => console.log("setSelectedTab(e.key)")}
+        onClick={(e) => console.log(e.key)}
       >
         <Menu.Item className="desktop-menu-item" key="about">
           About us
@@ -32,23 +36,50 @@ const DesktopNavbar = () => {
   );
 };
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ selectedTab, setSelectedTab }) => {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
   return (
-    <Dropdown
-      icon="bars"
-      as="button"
-      button
-      direction="left"
-      className="icon dropdown header-menu"
-    >
-      <Dropdown.Menu className="dropdown-menu">
-        <Dropdown.Item className="dropdown-item" text="About us" />
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropdown-item" text="Features" />
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropdown-item" text="Contact us" />
-      </Dropdown.Menu>
-    </Dropdown>
+    <div className="mobile-menu-wrapper">
+      <Button
+        className="mobile-menu-button"
+        icon={<MenuOutlined />}
+        onClick={() => setMenuOpen((menuOpen) => setMenuOpen(!menuOpen))}
+      />
+
+      <Drawer
+        title="Acme Inc."
+        placement="left"
+        closable={true}
+        onClose={() => setMenuOpen(false)}
+        visible={menuOpen}
+        getContainer={false}
+        style={{ position: "fixed" }}
+      >
+        <Menu
+          selectedKeys={[selectedTab]}
+          mode="vertical"
+          style={{ borderRight: "none" }}
+          onClick={(e) => {
+            console.log(e.key);
+            setMenuOpen(false);
+          }}
+        >
+          <Menu.Item icon={<InfoCircleOutlined />} key="about">
+            About us
+          </Menu.Item>
+          <Menu.Item icon={<SettingOutlined />} key="features">
+            Features
+          </Menu.Item>
+          <Menu.Item icon={<HomeOutlined />} key="company">
+            Company
+          </Menu.Item>
+          <Menu.Item icon={<SendOutlined />} key="company">
+            Contact us
+          </Menu.Item>
+        </Menu>
+      </Drawer>
+    </div>
   );
 };
 
