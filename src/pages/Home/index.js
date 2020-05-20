@@ -1,33 +1,20 @@
 import React from "react";
-import { message } from "antd";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Content from "./components/Content";
-import ContactModal from "./components/ContactModal";
+import GenericSection from "./components/GenericSection";
+import HeroSection from "./components/HeroSection";
+import PartnersSection from "./components/PartnersSection";
 
 import { StyledHome } from "./styles";
 
 const Home = () => {
-  const [contactVisible, setContactVisible] = React.useState(false);
-
-  const onContactSubmit = () => {
-    message.success("Thanks! We'll be in touch soon.");
-  };
-
   return (
-    <>
-      <ContactModal
-        visible={contactVisible}
-        setVisible={setContactVisible}
-        onContactSubmit={onContactSubmit}
-      />
-      <StyledHome>
-        <Header setContactVisible={setContactVisible} />
-        <Content id="content" />
-        <Footer id="footer" />
-      </StyledHome>
-    </>
+    <StyledHome>
+      <HeroSection />
+      <GenericSection isImageLeft={false} />
+      <PartnersSection />
+      <GenericSection isImageLeft={true} />
+      <GenericSection isImageLeft={false} />
+    </StyledHome>
   );
 };
 

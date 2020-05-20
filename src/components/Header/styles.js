@@ -30,6 +30,11 @@ export const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
 
+  .logo-wrapper {
+    height: 100%;
+    width: 0px;
+  }
+
   .logo {
     height: 100%;
     width: auto;

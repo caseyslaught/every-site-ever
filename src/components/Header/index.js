@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Button, Drawer, Menu } from "antd";
 import {
+  DollarOutlined,
   InfoCircleOutlined,
-  HomeOutlined,
   MenuOutlined,
   SendOutlined,
   SettingOutlined,
@@ -13,23 +14,25 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { StyledHeader, StyledHeaderWrapper } from "./styles";
 import Logo from "../../assets/images/logo.png";
 
-const DesktopNavbar = ({ setContactVisible }) => {
+const DesktopNavbar = ({
+  menuItems,
+  selectedKey,
+  setSelectedKey,
+  setContactVisible,
+}) => {
   return (
     <div className="desktop-menu-wrapper">
       <Menu
         className="desktop-menu"
         mode="horizontal"
-        onClick={(e) => console.log(e.key)}
+        selectedKeys={[selectedKey]}
+        onClick={(e) => setSelectedKey(e.key)}
       >
-        <Menu.Item className="desktop-menu-item" key="about">
-          About us
-        </Menu.Item>
-        <Menu.Item className="desktop-menu-item" key="features">
-          Features
-        </Menu.Item>
-        <Menu.Item className="desktop-menu-item" key="company">
-          Company
-        </Menu.Item>
+        {menuItems.map((item) => (
+          <Menu.Item className="desktop-menu-item" key={item.key}>
+            <Link to={item.path}>{item.text}</Link>
+          </Menu.Item>
+        ))}
       </Menu>
       <Button shape="round" onClick={() => setContactVisible(true)}>
         Contact us
@@ -38,7 +41,12 @@ const DesktopNavbar = ({ setContactVisible }) => {
   );
 };
 
-const MobileNavbar = ({ selectedTab, setSelectedTab, setContactVisible }) => {
+const MobileNavbar = ({
+  menuItems,
+  selectedKey,
+  setSelectedKey,
+  setContactVisible,
+}) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
@@ -59,26 +67,22 @@ const MobileNavbar = ({ selectedTab, setSelectedTab, setContactVisible }) => {
         style={{ position: "fixed" }}
       >
         <Menu
-          selectedKeys={[selectedTab]}
           mode="vertical"
+          selectedKeys={[selectedKey]}
           style={{ borderRight: "none" }}
           onClick={(e) => {
-            console.log(e.key);
             setMenuOpen(false);
+            setSelectedKey(e.key);
           }}
         >
-          <Menu.Item icon={<InfoCircleOutlined />} key="about">
-            About us
-          </Menu.Item>
-          <Menu.Item icon={<SettingOutlined />} key="features">
-            Features
-          </Menu.Item>
-          <Menu.Item icon={<HomeOutlined />} key="company">
-            Company
-          </Menu.Item>
+          {menuItems.map((item) => (
+            <Menu.Item icon={item.icon} key={item.key}>
+              <Link to={item.path}>{item.text}</Link>
+            </Menu.Item>
+          ))}
           <Menu.Item
             icon={<SendOutlined />}
-            key="company"
+            key="contact"
             onClick={() => setContactVisible(true)}
           >
             Contact us
@@ -92,12 +96,34 @@ const MobileNavbar = ({ selectedTab, setSelectedTab, setContactVisible }) => {
 const Header = ({ setContactVisible }) => {
   const { isDesktop } = useWindowDimensions();
   const [isSmall, setIsSmall] = React.useState(false);
+  const [selectedKey, setSelectedKey] = React.useState();
 
   React.useEffect(() => {
     const onScroll = () => setIsSmall(window.pageYOffset > 100);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const menuItems = [
+    {
+      icon: <InfoCircleOutlined />,
+      key: "about",
+      path: "/about",
+      text: "About us",
+    },
+    {
+      icon: <SettingOutlined />,
+      key: "features",
+      path: "/features",
+      text: "Features",
+    },
+    {
+      icon: <DollarOutlined />,
+      key: "pricing",
+      path: "/pricing",
+      text: "Pricing",
+    },
+  ];
 
   return (
     <StyledHeaderWrapper
@@ -106,11 +132,23 @@ const Header = ({ setContactVisible }) => {
       isSmall={isSmall}
     >
       <StyledHeader className="header" isDesktop={isDesktop} isSmall={isSmall}>
-        <img className="logo" src={Logo} alt="company logo" />
+        <Link className="logo-wrapper" to="/">
+          <img className="logo" src={Logo} alt="company logo" />
+        </Link>
         {isDesktop ? (
-          <DesktopNavbar setContactVisible={setContactVisible} />
+          <DesktopNavbar
+            selectedKey={selectedKey}
+            setSelectedKey={setSelectedKey}
+            setContactVisible={setContactVisible}
+            menuItems={menuItems}
+          />
         ) : (
-          <MobileNavbar setContactVisible={setContactVisible} />
+          <MobileNavbar
+            selectedKey={selectedKey}
+            setSelectedKey={setSelectedKey}
+            setContactVisible={setContactVisible}
+            menuItems={menuItems}
+          />
         )}
       </StyledHeader>
     </StyledHeaderWrapper>

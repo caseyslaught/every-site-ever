@@ -10,7 +10,7 @@ const HeroSection = () => {
   const { isDesktop } = useWindowDimensions();
 
   return (
-    <StyledHeroSectionWrapper>
+    <StyledHeroSectionWrapper className="hero-wrapper">
       <StyledHeroSection isDesktop={isDesktop}>
         <div className="image-wrapper">
           <img src={One} alt="hero" />
