@@ -5,9 +5,7 @@ import { StyledAbout } from "./styles";
 const About = () => {
   return (
     <StyledAbout>
-      <div>
-        <h3>About us</h3>
-      </div>
+      <h3>About us!</h3>
     </StyledAbout>
   );
 };

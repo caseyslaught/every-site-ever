@@ -133,7 +133,12 @@ const Header = ({ setContactVisible }) => {
     >
       <StyledHeader className="header" isDesktop={isDesktop} isSmall={isSmall}>
         <Link className="logo-wrapper" to="/">
-          <img className="logo" src={Logo} alt="company logo" />
+          <img
+            className="logo"
+            src={Logo}
+            alt="company logo"
+            onClick={() => setSelectedKey(null)}
+          />
         </Link>
         {isDesktop ? (
           <DesktopNavbar
