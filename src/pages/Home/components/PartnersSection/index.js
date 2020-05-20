@@ -1,14 +1,14 @@
 import React from "react";
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 
 import { StyledPartnersSection, StyledPartnersSectionWrapper } from "./styles";
 
-import One from "../../assets/images/partner_one.png";
-import Two from "../../assets/images/partner_two.png";
-import Three from "../../assets/images/partner_three.png";
-import Four from "../../assets/images/partner_four.png";
-import Five from "../../assets/images/partner_five.png";
+import One from "../../../../assets/images/partner_one.png";
+import Two from "../../../../assets/images/partner_two.png";
+import Three from "../../../../assets/images/partner_three.png";
+import Four from "../../../../assets/images/partner_four.png";
+import Five from "../../../../assets/images/partner_five.png";
 
 const PartnerTile = ({ imageUrl }) => {
   return (

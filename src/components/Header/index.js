@@ -13,7 +13,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { StyledHeader, StyledHeaderWrapper } from "./styles";
 import Logo from "../../assets/images/logo.png";
 
-const DesktopNavbar = () => {
+const DesktopNavbar = ({ setContactVisible }) => {
   return (
     <div className="desktop-menu-wrapper">
       <Menu
@@ -31,12 +31,14 @@ const DesktopNavbar = () => {
           Company
         </Menu.Item>
       </Menu>
-      <Button shape="round">Contact us</Button>
+      <Button shape="round" onClick={() => setContactVisible(true)}>
+        Contact us
+      </Button>
     </div>
   );
 };
 
-const MobileNavbar = ({ selectedTab, setSelectedTab }) => {
+const MobileNavbar = ({ selectedTab, setSelectedTab, setContactVisible }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
@@ -74,7 +76,11 @@ const MobileNavbar = ({ selectedTab, setSelectedTab }) => {
           <Menu.Item icon={<HomeOutlined />} key="company">
             Company
           </Menu.Item>
-          <Menu.Item icon={<SendOutlined />} key="company">
+          <Menu.Item
+            icon={<SendOutlined />}
+            key="company"
+            onClick={() => setContactVisible(true)}
+          >
             Contact us
           </Menu.Item>
         </Menu>
@@ -83,7 +89,7 @@ const MobileNavbar = ({ selectedTab, setSelectedTab }) => {
   );
 };
 
-const Header = () => {
+const Header = ({ setContactVisible }) => {
   const { isDesktop } = useWindowDimensions();
   const [isSmall, setIsSmall] = React.useState(false);
 
@@ -101,7 +107,11 @@ const Header = () => {
     >
       <StyledHeader className="header" isDesktop={isDesktop} isSmall={isSmall}>
         <img className="logo" src={Logo} alt="company logo" />
-        {isDesktop ? <DesktopNavbar /> : <MobileNavbar />}
+        {isDesktop ? (
+          <DesktopNavbar setContactVisible={setContactVisible} />
+        ) : (
+          <MobileNavbar setContactVisible={setContactVisible} />
+        )}
       </StyledHeader>
     </StyledHeaderWrapper>
   );

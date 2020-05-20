@@ -1,9 +1,9 @@
 import React from "react";
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 
-import Two from "../../assets/images/two.png";
-import Three from "../../assets/images/three.png";
+import Two from "../../../../assets/images/two.png";
+import Three from "../../../../assets/images/three.png";
 
 import { StyledSection, StyledSectionWrapper } from "./styles";
 

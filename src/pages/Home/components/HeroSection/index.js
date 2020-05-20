@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../../../hooks/useWindowDimensions";
+import One from "../../../../assets/images/one.png";
 
 import { StyledHeroSection, StyledHeroSectionWrapper } from "./styles";
-import One from "../../assets/images/one.png";
 
 const HeroSection = () => {
   const { isDesktop } = useWindowDimensions();
